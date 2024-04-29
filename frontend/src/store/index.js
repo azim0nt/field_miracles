@@ -2,7 +2,7 @@ import { globalReducer } from "./helpers";
 import { createContext } from "react";
 
 const initialState = {
-    isPlaying:true
+    isPlaying:false
 }
 
 const context = createContext()

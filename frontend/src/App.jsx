@@ -1,6 +1,9 @@
-import Home from "./components/Home"
+
 import { useReducer } from "react"
 import { context, globalReducer, initialState } from "./store"
+import { BrowserRouter} from "react-router-dom"
+import AllComponents from "./components/AllComponents"
+
 function App() {
   const [state, dispatch] = useReducer(globalReducer, initialState)
   const contextPayload = {
@@ -11,7 +14,9 @@ function App() {
   return (
     <>
       <context.Provider value={contextPayload}>
-        <Home />
+        <BrowserRouter>
+          <AllComponents/>
+        </BrowserRouter>
       </context.Provider>
     </>
   )
