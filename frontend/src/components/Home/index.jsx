@@ -4,6 +4,7 @@ import { context } from '../../store';
 import Sound from '../../assets/sound/main_sound.mp3';
 import VolumeOn from '../../assets/images/icons/volume_on.svg';
 import VolumeOff from '../../assets/images/icons/volume_off.svg';
+import {Link} from 'react-router-dom'
 function Home() {
     const [bgStyle, setBgStyle] = useState({});
     const { store, setStore } = useContext(context);
@@ -49,11 +50,11 @@ function Home() {
     return (
         <div className="home-container">
             <div className="menu">
-                <button className='eightbit-btn'>Играть</button>
-                <button onClick={togglePlay} style={{backgroundColor:'#00000000'}}>
-                    {store.isPlaying ? <button className='eightbit-btn reset'><img src={VolumeOff} alt="" /></button> : <button className='eightbit-btn'><img src={VolumeOn} alt="" /></button>}
+                <Link className='eightbit-btn' to={'/game'}>Играть</Link>
+                <button onClick={togglePlay} style={{ backgroundColor: '#00000000' }}>
+                    {store.isPlaying ? <button className='eightbit-btn'><img src={VolumeOn} alt="" /></button> : <button className='eightbit-btn reset'><img src={VolumeOff} alt="" /></button>}
                 </button>
-                
+
             </div>
             <div className="home" style={bgStyle}></div>
         </div>

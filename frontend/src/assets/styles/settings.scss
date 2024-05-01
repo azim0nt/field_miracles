@@ -30,6 +30,10 @@ button{
   border: none;
   cursor: pointer;
 }
+a{
+  text-decoration: none;
+  color: #fff;
+}
 .eightbit-btn {
   background: $button-background;
   display: inline-block;
